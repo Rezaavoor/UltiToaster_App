@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="271" height="271" viewBox="0 0 271 271">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.069" y1="0.967" x2="0.969" y2="0.163" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffdf49"/>
+      <stop offset="1" stop-color="#fee77d"/>
+    </linearGradient>
+    <filter id="Rectangle_2" x="0" y="0" width="271" height="271" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Logo" transform="translate(-114 -312)">
+    <g transform="matrix(1, 0, 0, 1, 114, 312)" filter="url(#Rectangle_2)">
+      <rect id="Rectangle_2-2" data-name="Rectangle 2" width="235" height="235" rx="19" transform="translate(18 15)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Logo-2" data-name="Logo" transform="translate(146.14 376.46)">
+      <path id="Path_1" data-name="Path 1" stroke="#7d7d7d" d="M105.42,105.147c-12.856-3.007-23.631-7.481-28.983-13.63l3.772-2.758c4.3,4.942,13.7,9.132,26.4,12.1,12.555,2.937,27.83,4.569,43.273,4.74s30.951-1.118,43.974-3.968c13.131-2.874,23.31-7.243,28.59-12.929l3.674,2.866c-6.3,6.791-17.75,11.432-31.143,14.365-13.5,2.954-29.416,4.264-45.154,4.089S118.423,108.188,105.42,105.147Z" fill="#7d7d7d" transform="translate(-48.866 -50.103)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" fill-rule="evenodd"/>
+      <path id="Path_2" data-name="Path 2" d="M68.635,82v83.659c0,12.706,11.846,23.006,26.459,23.006H217.766c14.612,0,26.459-10.3,26.459-23.006V82H259.86v83.659c0,20.214-18.846,36.6-42.094,36.6H95.094C71.846,202.26,53,185.873,53,165.659V82Z" transform="translate(-53 -49.528)" fill="#7d7d7d" fill-rule="evenodd"/>
+      <path id="Path_3" data-name="Path 3" d="M211.433,113.195V85.238A25.919,25.919,0,0,0,185.515,59.32H132.238A25.919,25.919,0,0,0,106.32,85.238v27.956H102V85.238A30.238,30.238,0,0,1,132.238,55h53.277a30.238,30.238,0,0,1,30.238,30.238v27.957Z" transform="translate(-55.004 -74)" fill="#7d7d7d" fill-rule="evenodd"/>
+      <path id="Path_4" data-name="Path 4" d="M132.4,73.04c0,2.783-3.224,5.04-7.2,5.04s-7.2-2.256-7.2-5.04S121.224,68,125.2,68,132.4,70.256,132.4,73.04Z" transform="translate(-47.966 -68.281)" fill="#7d7d7d"/>
+      <path id="Path_5" data-name="Path 5" d="M170.4,73.04c0,2.783-3.224,5.04-7.2,5.04s-7.2-2.256-7.2-5.04S159.224,68,163.2,68,170.4,70.256,170.4,73.04Z" transform="translate(-31.249 -68.281)" fill="#7d7d7d"/>
+    </g>
+  </g>
+</svg>

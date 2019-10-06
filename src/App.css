@@ -1,0 +1,12 @@
+.App {
+  max-width: 412px;
+  max-height: 825px;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#ffdf49, #ffd92dcc 10%, #ffd92d80 20%, #ffec9799);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: #707070;
+}

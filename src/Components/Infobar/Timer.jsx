@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import DataContext from "../../Context/DataContext";
 
 const Container = styled.div`
   width: 100%;
@@ -10,7 +11,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 const SeekbarContainer = styled.div`
-  width: 200px;
+  width: 220px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,17 +42,23 @@ const Seekbar = styled.input`
   }
 `;
 export default function Timer() {
-  const [timer, setTimer] = useState(50);
+  const [data, setData] = useContext(DataContext);
   return (
     <Container>
-      <p>{`Timer: ${timer}s`}</p>
+      <p>{`Timer: ${data.timer}s`}</p>
       <SeekbarContainer>
         1
         <Seekbar
           type='range'
           min='1'
           max='100'
-          onChange={e => setTimer(e.target.value)}
+          value={data.timer}
+          onChange={e => {
+            setData({
+              timer: parseInt(e.target.value),
+              breadCount: data.breadCount
+            });
+          }}
         />
         100
       </SeekbarContainer>

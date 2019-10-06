@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+
+import DataContext from "../../Context/DataContext";
 
 const Container = styled.div`
   width: 100%;
@@ -40,17 +42,23 @@ const Seekbar = styled.input`
   }
 `;
 export default function BreadCount() {
-  const [breadCount, setBreadCount] = useState(1);
+  const [data, setData] = useContext(DataContext);
   return (
     <Container>
-      <p>{`How Many Bread? ${breadCount}`}</p>
+      <p>{`How Many Bread? ${data.breadCount ? 2 : 1}`}</p>
       <SeekbarContainer>
         1
         <Seekbar
           type='range'
-          min='1'
-          max='2'
-          onChange={e => setBreadCount(e.target.value)}
+          min='0'
+          max='1'
+          value={data.breadCount}
+          onChange={e =>
+            setData({
+              timer: data.timer,
+              breadCount: parseInt(e.target.value) ? 1 : 0
+            })
+          }
         />
         2
       </SeekbarContainer>

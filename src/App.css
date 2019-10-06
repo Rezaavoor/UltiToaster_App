@@ -9,4 +9,5 @@
   justify-content: flex-start;
   flex-direction: column;
   color: #707070;
+  overflow: hidden;
 }

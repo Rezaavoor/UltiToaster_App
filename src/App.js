@@ -14,7 +14,7 @@ function App() {
   });
   return (
     <DataProvider value={[data, setData]}>
-      <div className='App'>
+      <div className="App">
         <Navbar />
         <Toasts />
         <Infobar />

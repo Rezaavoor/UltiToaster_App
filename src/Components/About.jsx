@@ -27,9 +27,16 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   pointer-events: ${props => (props.expanded ? "auto" : "none")};
+  p {
+    font-size: 0.5rem;
+    margin-left: 120px;
+  }
+  h1 {
+    margin-left: 10px;
+  }
 `;
 const Link = styled.a`
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   &:link,
   &:visited {
     text-decoration: none;
@@ -37,17 +44,17 @@ const Link = styled.a`
     background: #707070;
   }
   margin: 5px;
-  padding: 4px;
+  padding: 0px 2px;
 `;
 export default function About(props) {
   return (
     <>
       <Modal expanded={props.expanded} />
       <Container expanded={props.expanded}>
-        <h2>UltiToaster</h2>
+        <h1>UltiToaster</h1>
         <p>
           Created By
-          <Link href="https://www.rezahosseini.me" target="_blank">
+          <Link href='https://www.rezahosseini.me' target='_blank'>
             Reza Hosseini
           </Link>
         </p>

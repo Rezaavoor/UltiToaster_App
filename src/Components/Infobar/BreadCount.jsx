@@ -55,7 +55,7 @@ export default function BreadCount() {
           value={data.breadCount}
           onChange={e =>
             setData({
-              timer: data.timer,
+              ...data,
               breadCount: parseInt(e.target.value) ? 1 : 0
             })
           }

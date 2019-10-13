@@ -55,8 +55,8 @@ export default function Timer() {
           value={data.timer}
           onChange={e => {
             setData({
-              timer: parseInt(e.target.value),
-              breadCount: data.breadCount
+              ...data,
+              timer: parseInt(e.target.value)
             });
           }}
         />

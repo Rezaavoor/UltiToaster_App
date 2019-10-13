@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 import OrderButton from "./OrderButton";
 
 const Container = styled.div`
@@ -14,9 +13,11 @@ const Container = styled.div`
 export default function Orderbox() {
   return (
     <Container>
-      <OrderButton>Toast Now!</OrderButton>
+      <OrderButton state='toast'>Toast Now!</OrderButton>
       <p>or</p>
-      <OrderButton secondary>Schedule</OrderButton>
+      <OrderButton state='schedule' secondary>
+        Schedule
+      </OrderButton>
     </Container>
   );
 }

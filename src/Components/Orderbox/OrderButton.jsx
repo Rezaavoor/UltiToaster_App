@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import DataContext from "../../Context/DataContext";
 
 const Container = styled.div`
   width: ${props => (props.secondary ? "90px" : "310px")};
@@ -20,5 +21,22 @@ const Container = styled.div`
 `;
 
 export default function OrderButton(props) {
-  return <Container secondary={props.secondary}>{props.children}</Container>;
+  const [data, setData] = useContext(DataContext);
+  const orderButtonHandler = state => {
+    setData({
+      ...data,
+      order: {
+        state: state,
+        date: ""
+      }
+    });
+  };
+  return (
+    <Container
+      onClick={() => orderButtonHandler(props.state)}
+      secondary={props.secondary}
+    >
+      {props.children}
+    </Container>
+  );
 }

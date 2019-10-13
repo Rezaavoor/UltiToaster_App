@@ -6,9 +6,7 @@ import Face from "./Face";
 
 const Container = styled.div`
   height: 100%;
-  transition: "all 0.5s ease-out";
-  /* position: ${props =>
-    props.two ? (props.second ? "absolute" : "relative") : "relative"}; */
+  transition: all 0.3s ease-out;
   position: relative;
   display: flex;
   align-items: center;

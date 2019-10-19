@@ -54,7 +54,7 @@ export default function About(props) {
         <h1>UltiToaster</h1>
         <p>
           Created By
-          <Link href='https://www.rezahosseini.me' target='_blank'>
+          <Link href="https://www.rezahosseini.me" target="_blank">
             Reza Hosseini
           </Link>
         </p>

@@ -11,4 +11,5 @@
   color: #707070;
   overflow: hidden;
   position: relative;
+  user-select: none;
 }

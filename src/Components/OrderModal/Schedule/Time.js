@@ -111,7 +111,7 @@ export default function Time(props) {
           }}
           xmin={0}
           xmax={23}
-          xstep={props.hourStep}
+          xstep={1}
           x={moment(data.order.date).hours()}
           onChange={e => changeHours(e)}
         />
@@ -139,7 +139,7 @@ export default function Time(props) {
           }}
           xmin={0}
           xmax={59}
-          xstep={props.minStep}
+          xstep={1}
           x={moment(data.order.date).minutes()}
           onChange={e => changeMinutes(e)}
         />

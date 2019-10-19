@@ -2,13 +2,15 @@ import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import SmileySvg from "../../assets/Smiley.svg";
 import DataContext from "../../Context/DataContext";
+import ScheduleInput from "./Schedule/ScheduleInput";
+import moment from "moment";
 
 const Container = styled.div`
-  width: 80%;
-  height: 400px;
+  width: 90%;
+  height: 70vh;
   position: absolute;
-  top: calc(-550px + 100px);
-  background: #f9eeb9;
+  top: calc(-70vh + 100px);
+  background: #fff5c9;
   opacity: 0.9;
   display: flex;
   border-radius: 1rem;
@@ -35,19 +37,6 @@ const OkButton = styled.div`
   cursor: pointer;
   margin-top: 30px;
 `;
-const CurrentTime = styled.div`
-  width: 100%;
-  height: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 0.7rem;
-  p {
-    margin: 0 5px;
-  }
-`;
-const DatePicker = styled.div``;
 export default function Order() {
   const [data, setData] = useContext(DataContext);
   const { state, date } = data.order;
@@ -55,7 +44,7 @@ export default function Order() {
     clickableAreasHandler(Boolean(state));
     if (document.querySelector(".orderModal"))
       document.querySelector(".orderModal").style.transform =
-        "translateY(550px)";
+        "translateY(70vh)";
   });
 
   const clickableAreasHandler = limit => {
@@ -76,26 +65,33 @@ export default function Order() {
     clickableAreasHandler(false);
     const modal = document.querySelector(".orderModal");
     modal.removeAttribute("className");
-    setData({ ...data, order: { state: "", date: date } });
+    setData({
+      ...data,
+      order: {
+        state: state === "schedule" ? "toast" : "",
+        date: state === "schedule" ? date : moment().format("MM/DD H:m")
+      }
+    });
   };
-
+  const momentDate = moment(date);
+  const fromNow = [
+    moment().year(),
+    momentDate.month(),
+    momentDate.date(),
+    momentDate.hours(),
+    momentDate.minutes() + 2
+  ];
   const Toast = (
-    <Container className='orderModal'>
-      <h4>Your Bread Will Be Ready In {date || "1"} Min!</h4>
-      <img src={SmileySvg} alt='smiley' />
-      <OkButton onClick={() => okButtonHandler()} secondary>
-        Ok!
-      </OkButton>
+    <Container className="orderModal">
+      <h4>Your bread will be ready {moment(fromNow).fromNow() || "1"}!</h4>
+      <img src={SmileySvg} alt="smiley" />
+      <OkButton onClick={() => okButtonHandler()}>Ok!</OkButton>
     </Container>
   );
   const Schedule = (
-    <Container schedule className='orderModal'>
-      <CurrentTime>
-        <p>{`${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`}</p>
-        <p>{`${new Date().getHours()}:${new Date().getMinutes()}`}</p>
-      </CurrentTime>
-      <p style={{ alignSelf: "flex-start" }}>Pick a date:</p>
-      <OkButton onClick={() => okButtonHandler()}>Toast Now!</OkButton>
+    <Container schedule className="orderModal">
+      <ScheduleInput />
+      <OkButton onClick={() => okButtonHandler()}>Schedule!</OkButton>
     </Container>
   );
   return state ? state === "toast" ? Toast : Schedule : <></>;

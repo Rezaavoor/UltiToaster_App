@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import DataContext from "../../Context/DataContext";
+import moment from "moment";
 
 const Container = styled.div`
   width: ${props => (props.secondary ? "90px" : "310px")};
@@ -27,7 +28,13 @@ export default function OrderButton(props) {
       ...data,
       order: {
         state: state,
-        date: ""
+        date:
+          state === "toast"
+            ? data.order.date ||
+              moment()
+                .add(data.timer, "seconds")
+                .format("MM/DD LT")
+            : data.order.date
       }
     });
   };

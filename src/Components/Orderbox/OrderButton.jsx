@@ -30,10 +30,9 @@ export default function OrderButton(props) {
         state: state,
         date:
           state === "toast"
-            ? data.order.date ||
-              moment()
-                .add(data.timer, "seconds")
-                .format("MM/DD LT")
+            ? moment()
+              .add(data.timer, "seconds")
+              .format("MM/DD H:m")
             : data.order.date
       }
     });

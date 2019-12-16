@@ -51,11 +51,10 @@ export default function Order() {
     const body = document.querySelector("BODY");
     const modal = document.querySelector(".orderModal");
     if (limit) {
-      if (state) {
-        // console.log("event listeners are limited");
-        body.style.pointerEvents = "none";
-        modal.style.pointerEvents = "auto";
-      }
+      // console.log("event listeners are limited");
+      body.style.pointerEvents = "none";
+      modal.style.pointerEvents = "auto";
+
     } else {
       // console.log("event listeners are unlimited");
       body.style.pointerEvents = "auto";

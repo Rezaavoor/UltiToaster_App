@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import moment from "moment";
 import "./App.css";
 import { DataProvider } from "./Context/DataContext";
 
@@ -8,7 +9,7 @@ import Infobar from "./Components/Infobar/Infobar";
 import Orderbox from "./Components/Orderbox/Orderbox";
 import Order from "./Components/OrderModal/Order";
 
-import moment from "moment";
+import { toast } from './Utils/serverController'
 
 function App() {
   const [data, setData] = useState({
@@ -19,6 +20,12 @@ function App() {
       date: moment().format("MM/DD H:m")
     }
   });
+
+  useEffect(() => {
+    if (data.order.state === "toast") {
+      toast(data.timer)
+    }
+  }, [data])
 
   return (
     <DataProvider value={[data, setData]}>
